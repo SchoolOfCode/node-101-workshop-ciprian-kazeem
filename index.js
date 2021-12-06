@@ -2,18 +2,18 @@ let myCollection = [
   {
     name: "School of Code mug",
     count: 1,
-    whatILike: "It has my cute pixel character on it!"
+    whatILike: "It has my cute pixel character on it!",
   },
   {
     name: "School of Code hat",
     count: 2,
-    whatILike: "An often overlooked fashion accessory"
+    whatILike: "An often overlooked fashion accessory",
   },
   {
     name: "School of Code pillow",
     count: 1,
-    whatILike: "Eat. Sleep. Code. Repeat :)"
-  }
+    whatILike: "Eat. Sleep. Code. Repeat :)",
+  },
 ];
 // console.log(myCollection)
 // 👉 2c. Create a function called `describeItem`, which should take in an item as a parameter (the argument handed to this function would be an item from our collection). The function should `console.log` a message according to how many of the item you have.
@@ -26,16 +26,19 @@ let myCollection = [
 // Call your function below where you've defined it, handing in the first item in `myCollection`.
 
 // Now run the file again (using `node index.js`);
-function mappeditem(item) {
+function describeItem(item) {
   if (item.count === 1) {
-    console.log(`I have a ${item.name}. Here is what I like about it: ${item.whatILike}.`)
+    console.log(
+      `I have a ${item.name}. Here is what I like about it: ${item.whatILike}.`
+    );
   } else {
-
-    console.log(`I have ${item.count} ${item.name}s. Here is what I like about them: ${item.whatILike}.`)
+    console.log(
+      `I have ${item.count} ${item.name}s. Here is what I like about them: ${item.whatILike}.`
+    );
   }
 }
-function describeItem(item) {
 
-  item.map(mappeditem)
+function describeCollection(array) {
+  array.forEach(describeItem);
 }
-describeItem(myCollection)
+describeCollection(myCollection);
