@@ -1,4 +1,5 @@
-import collection from './collection.js'
+import collection from "./collection.js";
+import chalk from "chalk";
 // console.log(myCollection)
 // 👉 2c. Create a function called `describeItem`, which should take in an item as a parameter (the argument handed to this function would be an item from our collection). The function should `console.log` a message according to how many of the item you have.
 
@@ -13,11 +14,15 @@ import collection from './collection.js'
 function describeItem(item) {
   if (item.count === 1) {
     console.log(
-      `I have a ${item.name}. Here is what I like about it: ${item.whatILike}.`
+      `I have a ${chalk.cyan(
+        item.name
+      )}. Here is what I like about it: ${chalk.green(item.whatILike)}.`
     );
   } else {
     console.log(
-      `I have ${item.count} ${item.name}s. Here is what I like about them: ${item.whatILike}.`
+      `I have ${chalk.yellow(item.count)} ${chalk.cyan(
+        item.name
+      )}s. Here is what I like about them: ${chalk.green(item.whatILike)}.`
     );
   }
 }
